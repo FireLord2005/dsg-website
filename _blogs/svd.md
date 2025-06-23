@@ -3,7 +3,7 @@ title: "Singular Value Decomposition. Elucidated."
 layout: single
 permalink: /blogs/svd/
 ---
-![SVD]({{ site.baseurl }}/assets/images/blogs/svd_blog.png)
+![SVD]({{ site.baseurl }}/assets/images/blogs/svd/svd_blog.png)
 Mathematics is building block of Machine learning. I know math is hard to understand but it is much needed as well. Singular value decomposition (SVD) is one mathematical method used in various applications.
 
 Singular Value Decomposition is a matrix factorization method which is used in various domains of science and technology. Furthermore, due to recent great developments of machine learning, data mining and theoretical computer science, SVD has been found to be more and more important. It is not only a powerful tool and theory but also an art.
@@ -14,7 +14,7 @@ Matrix Factorization: It is a representation of a matrix into a product of matri
 ## Mathematics behind SVD
 For a m × n matrix(M) there exists a singular value decomposition of **M, **of the form
 
-![SVD]({{ site.baseurl }}/assets/images/blogs/svd_blog2.png)
+![SVD]({{ site.baseurl }}/assets/images/blogs/svd/svd_blog2.png)
 
 where
 
@@ -51,7 +51,7 @@ The above process describes is the inverse of SVD.
 
 The expression UΣV* can be interpreted as a composition of three geometrical transformations: a rotation, a scaling, and another rotation. SVD is generally used for data compression in various fields. Other than data compression the resultant matrices has lots of wonderful [properties](https://en.wikipedia.org/wiki/Singular_value_decomposition).
 
-![SVD]({{ site.baseurl }}/assets/images/blogs/svd_blog3.png)
+![SVD]({{ site.baseurl }}/assets/images/blogs/svd/svd_blog3.png)
 
 if M is symmetric positive definite its eigenvectors are orthogonal and we can write M= QΣQ*. This is a special case of a SVD, with U = V = Q
 
@@ -60,19 +60,19 @@ For mathematical example, refer to this [link](http://www.d.umn.edu/~mhampton/m4
 ## Principal Component Analysis
 Principal components analysis is a procedure for identifying a smaller number of uncorrelated variables, called “principal components”, from a large set of data. The goal of principal components analysis is to explain the maximum amount of variance with the fewest number of principal components. For more details, go through this [blog](https://medium.com/data-science-group-iitr/dimensionality-reduction-untangled-5fe391f6aeae).
 
-![SVD]({{ site.baseurl }}/assets/images/blogs/svd_blog4.png)
+![SVD]({{ site.baseurl }}/assets/images/blogs/svd/svd_blog4.png)
 
 # Relation between PCA and SVD-
 
 Let M be m × n matrix where m is the number of samples and n is the number of features
 
-![SVD]({{ site.baseurl }}/assets/images/blogs/svd_blog5.png)
+![SVD]({{ site.baseurl }}/assets/images/blogs/svd/svd_blog5.png)
 
 The [covariance matrix](https://en.wikipedia.org/wiki/Covariance_matrix) of M is C
 
-![SVD]({{ site.baseurl }}/assets/images/blogs/svd_blog6.png)
+![SVD]({{ site.baseurl }}/assets/images/blogs/svd/svd_blog6.png)
 
-![SVD]({{ site.baseurl }}/assets/images/blogs/svd_blog7.png)
+![SVD]({{ site.baseurl }}/assets/images/blogs/svd/svd_blog7.png)
 
 Note : The above is correct only if M is centered(scaled). Only then is covariance matrix equal to M*M/(m−1). That is why we need to center the intial dataset M for PCA.
 

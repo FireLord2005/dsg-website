@@ -3,7 +3,7 @@ title: "GodNet: A Neural Network Which Can Predict Your Future?"
 layout: single
 permalink: /blogs/godnet/
 ---
-![godnet]({{ site.baseurl }}/assets/images/blogs/godnet_blog.jpg)
+![godnet]({{ site.baseurl }}/assets/images/blogs/godnet/godnet_blog.jpg)
 # “Have you ever questioned the nature of your reality, Dolores?” — Westworld.
 “Are you living in a computer simulation?” — This was the title of a 2003 [paper](https://www.simulation-argument.com/simulation.pdf) published by Nick Bostrom, a Swedish philosopher at the University of Oxford. Googling “Are you living in a computer simulation?” — amounts to around 150 million search results. And apart from bothering many scientists, philosophers, and people who have questioned the nature of their reality, this has been the idea behind many movies, novels, podcasts, and much more.
 
@@ -42,7 +42,7 @@ We, humans, have designed many intelligent systems using different techniques. [
 Remember the simple function we talked about: y = f (x) = 2x² + 3x + 1. Here the input x goes through a transformation and produces y. Let’s call this one layer of computation. What if we apply some other transformation on this output y and convert it into some z. Thus the overall transformation that x went through to produce z is much more complex than the transformation required to produce y.
 
 Neural Networks pretty much follow the same idea. Neural Networks are just a bunch of nodes (or neurons) connected layer by layer which define the transformation that the input would go through to produce the output. A specific connection (or network) of layers and nodes is called an Architecture.
-![godnet]({{ site.baseurl }}/assets/images/blogs/godnet_blog2.png)
+![godnet]({{ site.baseurl }}/assets/images/blogs/godnet/godnet_blog2.png)
 Each node has some ‘parameters’ associated with it which are used to perform the transformations. These parameters are learned using some past data (called training data) and a learning algorithm (like Gradient Descent). Just like you would adjust the pegs to tune the string of a guitar until you hit the perfect note, we adjust the ‘parameters’ of a neural network until it has learned how to perform the task that you want it to perform.
 
 In case you have the curiosity and the time to learn more, I highly recommend you to watch this [video by 3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk).
@@ -53,7 +53,7 @@ The above shown neural network is known as a ‘Multi-Layer Perceptron’. Howev
 In fact, the recent surge of interest in AI began when [AlexNet](https://en.wikipedia.org/wiki/AlexNet), a CNN designed by Alex Krizhevsky, won the 2012 ImageNet LSVRC-2012 competition. Since then, researchers have come up with more and more complex *architectures *like VGGNet, ResNet, GoogLeNet, U-Net etc.
 
 CNNs work by extracting a more and more abstract representation of the features in an image by passing the image through convolutional layers. This representation is learned by adjusting the parameters associated with the layers such that it satisfies some given training data for the task.
-![godnet]({{ site.baseurl }}/assets/images/blogs/godnet_blog3.png)
+![godnet]({{ site.baseurl }}/assets/images/blogs/godnet/godnet_blog3.png)
 Though there’s much more to the story of CNNs, we’ll restrict ourselves here. In case you want to read more about them, check out this [blog](https://adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks/).
 
 ## Generative Adversarial Networks (GANs)
@@ -62,7 +62,7 @@ Okay, so CNNs are cool. But when two networks start ‘competing’ with each ot
 Imagine a thief who is a not-so-good artist. He makes fake replicas of famous paintings (like Mona Lisa) and sells it to people. The town’s policeman suspects something wrong going on and decides to check every painting made by the thief. To earn more profit, the thief needs to create paintings which are almost like the original ones. To stop the thief, the police has to be good at discriminating real and fake artwork. If this battle between the thief and the police goes on for quite some time, eventually, the policeman would become a better and better discriminator and the thief would become pretty close to Pablo Picasso.
 
 A GAN also consists of two networks: the generator (The thief) generates new instances of data, while the other, the discriminator (The police), evaluates them for authenticity (real or fake).
-![godnet]({{ site.baseurl }}/assets/images/blogs/godnet_blog4.png)
+![godnet]({{ site.baseurl }}/assets/images/blogs/godnet/godnet_blog4.png)
 Both nets are trying to optimize a different and opposing objective function, just like in our thief-police example. As the discriminator changes its behavior, so does the generator, and vice versa. Eventually, we have a generator which can generate new data which looks authentic but isn’t.
 
 Referring to GANs, Facebook’s AI research director Yann LeCun called adversarial training “the most interesting idea in the last 10 years in Machine Learning.” For more about GANs, you might want to check out this [video by ComputerPhile](https://www.youtube.com/watch?v=Sw9r8CL98N0).

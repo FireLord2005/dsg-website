@@ -3,7 +3,7 @@ title: "Boosting Decrypted"
 layout: single
 permalink: /blogs/boosting/
 ---
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog.png)
 I know it’s getting arduous to catch up with out daily posts, but it’s just meant to be this. [12 Algos in 12 days](https://medium.com/data-science-group-iitr/algos-algos-everywhere-f4e684473f14). Here, we unbox one of the most powerful ML technique used by Grandmasters to win Data Hackathons on [Kaggle](https://www.kaggle.com/). You’ll consider yourself lucky if you understand this properly.
 
 Improving a model accuracy beyond a certain limit can be challenging. This is exactly why you need [Boosting](https://en.wikipedia.org/wiki/Boosting_(machine_learning)).
@@ -21,7 +21,7 @@ Ensemble: The overall model built by Boosting is a weighted sum of all of the we
 
 Meta-algorithm: It isn’t a machine learning algorithm itself, uses other algorithms to make stronger predictions.
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog2.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog2.png)
 
 ## Types of Boosting
 # 1. AdaBoost
@@ -29,23 +29,23 @@ First original boosting technique: highly accurate prediction rule by combining 
 
 Algo explained!
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog3.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog3.png)
 
 Above shown is the sample space we shall use for classification.
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog4.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog4.png)
 
 Box1 : Equal weights are assigned to all observations and a decision stump is applied to classify + or - . S1 has generated a vertical line on the left side to classify the data points. This decision stump incorrectly predicted three +. So, we’ll assign more weight to these three data points in our next decision stump.
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog5.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog5.png)
 
 Box2 : The size difference between those three incorrectly predicted and the rest of the data points is clearly visible. Another decision stump (S2) is applied to predict them correctly on the right side of the box. But, this time three - are classified incorrectly. Repeat.
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog6.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog6.png)
 
 Box3 : Here, three - are given higher weights. S3 is applied to predict these misclassified observations correctly. This time, a horizontal line is generated to classify - and +.
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog7.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog7.png)
 
 Box4 : Here, we combine S1, S2, and S3 to form a strong prediction having a complex rule as compared to the individual weak learners. Evidently, this algorithm has classified these observations accurately as compared to any of the individual weak learners.
 
@@ -64,12 +64,12 @@ learning_rate: Shrinks the contribution of each tree by learning_rate. There is 
 
 algorithm: The SAMME.R algorithm typically converges faster than SAMME, achieving a lower test error with fewer boosting iterations.
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog8.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog8.png)
 
 # 2. Gradient Boosting
 If linear regression was a Toyota Camry, then gradient boosting would be a UH-60 Blackhawk Helicopter. It is the go-to algorithm for most of the hackers aiming to win ML competitions. Read carefully!
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog9.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog9.png)
 
 ML technique used for regression and classification problems, it produces a prediction model in the form of an ensemble of weak prediction models, typically decision trees.
 The principle idea behind this algorithm is to construct new base learners which can be maximally correlated with negative gradient of the loss function, associated with the whole ensemble.
@@ -82,11 +82,11 @@ We can add an additional model (regression tree) h to F, so that the new predict
 
 we wish to improve the model such that
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog10.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog10.png)
 
 Or, equivalently, you wish that
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog11.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog11.png)
 
 To get h, we fit a model on the points (x1, y1-F(x1)), (x2, y2-F(x2)), …(xn, yn-F(xn)).
 
@@ -99,15 +99,15 @@ Minimize a function by moving in the opposite direction of the gradient.
 
 Loss function : J = (y − F (x))²/2
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog12.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog12.png)
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog13.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog13.png)
 
 So consider negative gradient is equivalent to residual in case of Gradient Boosting. So, at each step we are trying to reduce residual and in case of Gradient descent we actually travel in the direction of negative gradient and try to reduce loss.
 
 Python Code
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog14.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog14.png)
 
 n_estimators : int (default=100)
 
@@ -117,7 +117,7 @@ max_depth :(default=3) = maximum depth of the individual regression estimators. 
 
 # 3. XGBoost (Extreme Gradient Boosting)
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog15.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog15.png)
 
 Do one thing before reading this. Take any recent Kaggle competition, and see top 3 winners approaches. If you don’t find use of XGBoost, shoot me!
 
@@ -131,7 +131,7 @@ Main difference between GBM and XGBoost is in their objective function. In case 
 
 I’m going to leave it here, because explaining Mathematics behind XGBoost will take a completely new blog.
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog16.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog16.png)
 
 # Curiosity is lust of the mind
 So, for all the curious mind out there who dwell to explore more! Look [here](http://xgboost.readthedocs.io/en/latest/model.html#elements-of-supervised-learning), [here](https://arxiv.org/pdf/1603.02754.pdf) and [here](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf).
@@ -153,9 +153,9 @@ Python code:
 
 Those who are wondering that why I described very few parameters above, I said Important.
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog17.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog17.png)
 
-![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting_blog18.png)
+![Boosting]({{ site.baseurl }}/assets/images/blogs/boosting/boosting_blog18.png)
 
 For codes in R, you can refer to [this article](https://www.analyticsvidhya.com/blog/2016/01/xgboost-algorithm-easy-steps/) and for tuning the parameters, you can refer to [this one](https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/).
 

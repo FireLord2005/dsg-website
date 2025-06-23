@@ -3,7 +3,7 @@ title: "Decision Trees. Decoded."
 layout: single
 permalink: /blogs/decision_trees/
 ---
-![DT]({{ site.baseurl }}/assets/images/blogs/dt_blog.jpg)
+![DT]({{ site.baseurl }}/assets/images/blogs/dt/dt_blog.jpg)
 It’s time to give the [Algorithm](https://medium.com/data-science-group-iitr/algos-algos-everywhere-f4e684473f14#.79qy9j9y0) series, an informative start. Here, we start with one of the most famous category i.e. Tree Based Models, which consists of Decision Trees, Random Forest and Boosting methods.
 
 To initiate the learning with a basic example, the above is a [decision tree](https://en.wikipedia.org/wiki/Decision_tree) for you:
@@ -21,7 +21,7 @@ Non-parametric: Fast and efficient.
 
 It consists of nodes which have parent-child relationships:
 
-![DT]({{ site.baseurl }}/assets/images/blogs/dt_blog2.png)
+![DT]({{ site.baseurl }}/assets/images/blogs/dt/dt_blog2.png)
 
 Finally, it gives us what we actually want - prediction for a given scenario.
 
@@ -30,7 +30,7 @@ It breaks a dataset into smaller subsets, and at the same time, an associated de
 
 First of all, let’s cover the basic terminology used:
 
-![DT]({{ site.baseurl }}/assets/images/blogs/dt_blog3.png)
+![DT]({{ site.baseurl }}/assets/images/blogs/dt/dt_blog3.png)
 
 **Root Node: **Entire population or sample, further gets divided into two or more homogeneous sets.
 
@@ -50,7 +50,7 @@ Splitting! What is it?
 
 Decision tree considers the most important variable using some fancy criterion and splits dataset based on it. It is done to reach a stage where we have homogenous subsets that are giving predictions with utmost surety.
 
-![DT]({{ site.baseurl }}/assets/images/blogs/dt_blog4.png)
+![DT]({{ site.baseurl }}/assets/images/blogs/dt/dt_blog4.png)
 
 These criteria affect the way tree grows, and thus the accuracy of model. It takes place until a user-defined stopping condition is reached, or perfect homogeneity is obtained.
 
@@ -62,7 +62,7 @@ Gini Index: Measure of variance across all classes of the data. Measures the imp
 
 Entropy: Measure of randomness. More the random data, higher the entropy. **E = -p*log(p) **; p - probability
 
-![DT]({{ site.baseurl }}/assets/images/blogs/dt_blog5.png)
+![DT]({{ site.baseurl }}/assets/images/blogs/dt/dt_blog5.png)
 
 Information Gain: Decrease in entropy. The difference between the entropy before the split and the average entropy after split is obtained to decide when to split.
 

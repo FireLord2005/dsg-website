@@ -3,7 +3,7 @@ title: "Regularization. Clarified."
 layout: single
 permalink: /blogs/regularization/
 ---
-![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization_blog.png)
+![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization/regularization_blog.png)
 The end is near. No, not the world, but the [12A12D](https://medium.com/data-science-group-iitr/algos-algos-everywhere-f4e684473f14) series. After [Linear Regression](https://medium.com/data-science-group-iitr/linear-regression-back-to-basics-e4819829d78b), it’s time to add more DS flavour.
 
 This will teach you a new technique used in case of [Overfitting](http://machinelearningmastery.com/overfitting-and-underfitting-with-machine-learning-algorithms/).
@@ -15,7 +15,7 @@ Occurs when you build a model that not only captures the signal, but also the no
 
 Overfitting or High Variance is caused by a hypothesis function that fits the available data but does not generalise well to predict new data. It is usually caused by a complicated function that creates a lot of unnecessary curves and angles unrelated to the data.
 
-![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization_blog2.jpg)
+![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization/regularization_blog2.jpg)
 
 This behaviour of the model is not desired as it has very poor predictive power. There are two main options to address the issue of overfitting:
 
@@ -25,15 +25,15 @@ Regularization: When a lot of slightly useful features are there.
 
 ## What is Regularization?
 
-![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization_blog3.png)
+![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization/regularization_blog3.png)
 
 Linear Regression: The parameters are estimated using the Least Squares approach, where the cost function i.e. the sum of squared residuals (RSS) are minimised.
 
-![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization_blog4.gif)
+![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization/regularization_blog4.gif)
 
 To perform Regularization, we will be modifying our Cost Function by adding a penalty to RSS. By adding a penalty to the Cost Function, the values of the parameters would decrease and thus the overfitted model gradually starts to smooth out depending on the magnitude of the penalty added.
 
-![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization_blog5.png)
+![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization/regularization_blog5.png)
 
 ## Ridge Regression
 It performs ‘L2 regularization’, i.e. adds penalty equivalent to square of the magnitude of coefficients. Thus, it optimises the following:
@@ -57,7 +57,7 @@ The coefficients will be somewhere between 0 and ones for simple linear regressi
 
 A snippet explaining how to execute Ridge Regression in Python is shown below. For further clarification on the syntax, one can visit [Sklearn](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html).
 
-![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization_blog6.png)
+![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization/regularization_blog6.png)
 
 ## Lasso Regression
 LASSO stands for Least Absolute Shrinkage and Selection Operator. I know it doesn’t give much of an idea but there are 2 key words here - absolute and selection.
@@ -70,7 +70,7 @@ Here, α (alpha) works similar to that of ridge. Like that of ridge, α can take
 
 So till now its *appearing to be very similar to Ridge, *but hold on you’ll know the difference by the time we finish. Like before, snippet follows. For further clarification you can again visit [Sklearn](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html).
 
-![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization_blog7.png)
+![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization/regularization_blog7.png)
 
 # Selection of α
 Alpha can be adjusted to help you find a good fit for your model.
@@ -91,13 +91,13 @@ But why is it that the lasso, unlike ridge regression, results in coefficient es
 ## Variable Selection Property of Lasso
 Before explaining this property, let’s look at another way of writing minimisation objective. One can show that the lasso and ridge regression coefficient estimates solve the problems respectively.
 
-![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization_blog8.png)
+![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization/regularization_blog8.png)
 
 In other words, for every value of α, there is some ‘s’ such that the equations (old and new cost functions) will give the same coefficient estimates. When p=2, then (6.8) indicates that the lasso coefficient estimates have the smallest RSS out of all points that lie within the diamond defined by |β1|+ |β2|≤s. Similarly, the ridge regression estimates have the smallest RSS out of all points that lie within the circle defined by (β1)²+(β2)²≤s
 
 Now, the above formulations can be used to shed some light on the issue.
 
-![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization_blog9.png)
+![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization/regularization_blog9.png)
 
 The least squares solution is marked as βˆ, while the blue diamond and circle represent the lasso and ridge regression constraints as explained above. If ‘s’ is sufficiently large, then the constraint regions will contain βˆ, and so the ridge regression and lasso estimates will be the same as the least squares estimates. (Such a large value of s corresponds to α=0 in the original cost function). However, in figure, the least squares estimates lie outside of the diamond and the circle, and so the least squares estimates are not the same as the lasso and ridge regression estimates. The ellipses that are centered around βˆ represent regions of constant RSS.
 
@@ -105,7 +105,7 @@ In other words, all of the points on a given ellipse share a common value of the
 
 Since, ridge regression has a circular constraint with no sharp points, this intersection will not generally occur on an axis, and so the ridge regression coefficient estimates will be exclusively non-zero. However, the lasso constraint has corners at each of the axes, and so the ellipse will often intersect the constraint region at an axis. When this occurs, one of the coefficients will equal zero. In higher dimensions, many of the coefficient estimates may equal zero simultaneously. In figure, the intersection occurs at β1=0, and so the resulting model will only include β2.
 
-![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization_blog10.jpg)
+![Regularization]({{ site.baseurl }}/assets/images/blogs/regularization/regularization_blog10.jpg)
 
 ## Applications
 Ridge: In majority of the cases, it is used to prevent overfitting. Since it includes all the features, it is not very useful in case of exorbitantly high features, say in millions, as it will pose computational challenges.

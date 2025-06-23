@@ -4,7 +4,9 @@ permalink: /about/
 layout: splash
 ---
 
+
 ![Data Science Group Team]( {{ site.baseurl }}/assets/images/dsgteam25.jpeg )
+
 
 We are Data Science Group, IIT Roorkee. A student organizaton, part of the umbrella organization Software Development Section. We aim to work on innovative open source projects in the domain of Machine Learning, Deep Learning & Reinforcement Learning, bridging the gap between research and industry. In the process, we fullfil our mission of cultivating and evolving the technical community at IIT Roorkee by organizing lectures, workshops, hackathons spanning the field of Data Science and AI.
 
@@ -40,7 +42,7 @@ We are Data Science Group, IIT Roorkee. A student organizaton, part of the umbre
 
  <div class="member-card">
     <img src="{{ site.baseurl }}/assets/images/members/y23/shorya.jpg" width= 200 height= 200 alt="Shorya Singhal">
-    <h3><a href="{{ site.baseurl }}/members/shroyasinghal">Shorya Singhal</a></h3>
+    <h3><a href="{{ site.baseurl }}/members/shoryasinghal">Shorya Singhal</a></h3>
 </div>
 
  <div class="member-card">
@@ -97,8 +99,10 @@ We are Data Science Group, IIT Roorkee. A student organizaton, part of the umbre
   </div>
 
   <div class="member-card">
+
     <img src="{{ site.baseurl }}/assets/images/members/y24/advika.jpeg" width="200" height="200" alt="Advika Sinha">
     <h3><a href="{{ site.baseurl }}/members/advika">Advika Sinha</a></h3>
+
   </div>
 
  <div class="member-card">
@@ -108,7 +112,7 @@ We are Data Science Group, IIT Roorkee. A student organizaton, part of the umbre
 
   <div class="member-card">
     <img src="{{ site.baseurl }}/assets/images/members/y24/kaustubh.jpg" alt="Kaustubh Sharma">
-    <h3><a href="{{ site.baseurl }}/members/kaustubh_sharma">Kaustubh Sharma</a></h3>
+    <h3><a href="{{ site.baseurl }}/members/kaustubhsharma">Kaustubh Sharma</a></h3>
   </div>
 
   <div class="member-card">
