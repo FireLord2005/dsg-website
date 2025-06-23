@@ -3,7 +3,7 @@ title: "Logistic Regression. Simplified."
 layout: single
 permalink: /blogs/logistic/
 ---
-![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic_blog.jpg)
+![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic/logistic_blog.jpg)
 After the basics of Regression, it’s time for basics of [Classification](https://en.wikipedia.org/wiki/Statistical_classification). And, what can be easier than Logistic Regression!
 
 This is what Classification actually means:
@@ -22,39 +22,39 @@ This type of a problem is referred to as Binomial Logistic Regression, where the
 # Why Logistic, not Linear?
 With binary classification, let ‘x’ be some feature and ‘y’ be the output which can be either 0 or 1. The probability that the output is 1 given its input can be represented as:
 
-![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic_blog2.png)
+![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic/logistic_blog2.png)
 
 If we predict the probability via linear regression, we can state it as:
 
-![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic_blog3.png)
+![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic/logistic_blog3.png)
 
 Linear regression model can generate the predicted probability as any number ranging from negative to positive infinity, whereas probability of an outcome can only lie between 0< P(x)<1.
 
-![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic_blog4.png)
+![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic/logistic_blog4.png)
 
-![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic_blog5.png)
+![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic/logistic_blog5.png)
 
 Also, Linear regression has a considerable effect on outliers. To avoid this problem, log-odds function or logit function is used.
 
 ## Logit Function
 Logistic regression can be expressed as:
 
-![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic_blog6.png)
+![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic/logistic_blog6.png)
 
 where, the left hand side is called the logit or log-odds function, and p(x)/(1-p(x)) is called odds.
 
 The odds signifies the ratio of probability of success to probability of failure. Therefore, in Logistic Regression, linear combination of inputs are mapped to the log(odds) - the output being equal to 1. If we take an inverse of the above function, we get:
 
-![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic_blog7.png)
+![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic/logistic_blog7.png)
 
 This is known as the Sigmoid function and it gives an S-shaped curve. It always gives a value of probability ranging from 0<p<1.
 
-![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic_blog8.png)
+![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic/logistic_blog8.png)
 
 # Estimation of Regression Coefficients
 Unlike linear regression model, that uses Ordinary Least Square for parameter estimation, we use Maximum Likelihood Estimation. There can be infinite sets of regression coefficients. The maximum likelihood estimate is that set of regression coefficients for which the probability of getting the data we have observed is maximum. If we have binary data, the probability of each outcome is simply π if it was a success, and 1−π otherwise. Therefore we have the likelihood function:
 
-![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic_blog9.png)
+![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic/logistic_blog9.png)
 
 To determine the value of parameters, log of likelihood function is taken, since it does not change the properties of the function. The log-likelihood is differentiated and using iterative techniques like Newton method, values of parameters that maximise the log-likelihood are determined.
 
@@ -67,18 +67,18 @@ Model deviance indicates the response predicted by a model on adding independent
 
 Another way to find the accuracy of model is by using Confusion Matrix.
 
-![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic_blog10.png)
+![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic/logistic_blog10.png)
 
 The accuracy of the model is given by:
 
-![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic_blog11.png)
+![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic/logistic_blog11.png)
 
 ## Multi-class Logistic Regression
 The basic intuition behind Multi-class and binary Logistic regression is same. However, for multi-class problem we follow a [one v/s all approach](https://houxianxu.github.io/implementation/One-vs-All-LogisticRegression.html).
 
 Eg. If we have to predict whether the weather is sunny, rainy, or windy, we are dealing with a Multi-class problem. We turn this problem into three binary classification problem i.e whether it is sunny or not, whether it is rainy or not and whether it is windy or not. We run all three classifications independently on input. The classification for which the value of probability is maximum relative to others, is the solution.
 
-![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic_blog12.png)
+![Logistic]({{ site.baseurl }}/assets/images/blogs/logistic/logistic_blog12.png)
 
 ## Is it really that good?
 As simple it seems, does it even solve any purpose? Let’s check!
