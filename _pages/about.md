@@ -4,7 +4,7 @@ permalink: /about/
 layout: single
 ---
 
-![Data Science Group Team]( {{ site.baseurl }}/assets/images/members/dsgteam25.jpg )
+![Data Science Group Team]( {{ site.baseurl }}/assets/images/dsgteam25.jpg )
 
 We are Data Science Group, IIT Roorkee. A student organizaton, part of the umbrella organization Software Development Section. We aim to work on innovative open source projects in the domain of Machine Learning, Deep Learning & Reinforcement Learning, bridging the gap between research and industry. In the process, we fullfil our mission of cultivating and evolving the technical community at IIT Roorkee by organizing lectures, workshops, hackathons spanning the field of Data Science and AI.
 
@@ -108,7 +108,7 @@ We are Data Science Group, IIT Roorkee. A student organizaton, part of the umbre
 
   <div class="member-card">
     <img src="{{ site.baseurl }}/assets/images/members/y24/kaustubh.jpg" alt="Kaustubh Sharma">
-    <h3><a href="{{ site.baseurl }}/members/kaustubh_sharma">Kaustubh Sharma</a></h3>
+    <h3><a href="{{ site.baseurl }}/members/kaustubhsharma">Kaustubh Sharma</a></h3>
   </div>
 
   <div class="member-card">
