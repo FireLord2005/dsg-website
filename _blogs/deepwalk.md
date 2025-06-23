@@ -3,9 +3,9 @@ title: "Understanding Deepwalk"
 layout: single
 permalink: /blogs/deepwalk/
 ---
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog.png)
 This is the first in this blog series Explained: Graph Representation Learning and to discuss extraction useful graph features and node embeddings by considering the topology of the network graph using machine learning, this blog deals with Deep Walk. This is a simple unsupervised online learning approach, very similar to language modeling used in NLP, where the goal is to generate word embeddings. In this case, generalizing the same concept, it merely tries to learn latent representations of nodes/vertices of a given graph. These graph embeddings, which capture neighborhood similarity and community membership, can then be used for learning downstream tasks on the graph.
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog2.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog2.png)
 # Motivation
 Assume a setting, given a graph G where you wish to convert the nodes into embedding vectors, and the only information about a node are the indices of the nodes to which it is connected (adjacency matrix). Since there is no initial feature matrix corresponding to the data, we construct a feature matrix which will have all the randomly selected nodes. There can be multiple methods to select these, but here we are assuming that they are normally sampled (though it won’t make much of a difference even if they are taken from some other distribution).
 
@@ -14,15 +14,15 @@ Random walk rooted at vertex $v_i$ as $W_{v_i}$. It is a stochastic process with
 
 # What is Power Law?
 A scale-free network is a network whose degree distribution follows a power law, at least asymptotically. That is, the fraction $P(k)$ of nodes in the network having $k$ connections to other nodes goes for large values of $k$ as $P(k) \sim k^{-\gamma}$ where $k=2,3$ etc.
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog3.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog3.png)
 The network of global banking activity with nodes representing the absolute size of assets booked in the respective jurisdiction and the edges between them the exchange of financial assets, with data taken from the IMF, is a scale-free network and follows Power Law. We can then see clearly how very few core nodes dominate this network, there are approximately 200 countries in the world, but these 19 most significant jurisdictions in terms of capital together are responsible for over 90% of the assets.
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog4.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog4.png)
 These highly centralized networks are more formally called scale-free or power-law networks, that describe a power or exponential relationship between the degree of connectivity a node has and the frequency of its occurrence. [More](https://www.youtube.com/watch?v=qmCrtuS9vtU) about centralized networks and power law.
 
 # Why is it important here?
 Social networks, including collaboration networks, computer networks, financial networks, and Protein-protein interaction networks are some examples of networks claimed to be scale-free.
 According to the authors, “If the degree distribution of a connected graph follows a power law (i.e. scale-free), we observe that the frequency which vertices appear in the short random walks will also follow a power-law distribution. Word frequency in natural language follows a similar distribution, and techniques from language modeling account for this distributional behavior."
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog5.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog5.png)
 ## Intuition with SkipGram
 Think about the below unrelated problem for now:-
 Given, some english sentences (could be any other language, doesn’t matter) you need to find a vector corresponding to each word appearing at least once in the sentence such that the words having similar meaning appear close to each other in their vector space, and the opposite must hold for words which are dissimilar.
@@ -64,26 +64,26 @@ In simple words, DeepWalk algorithm uses the notion of Random Walks to get the s
 So, that is for you Ladies and Gentlemen, the ‘DeepWalk’ model.
 
 Mathematically the Deep Walk algorithm is defined as follows,
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog6.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog6.png)
 # PyTorch Implementation of DeepWalk
 Here we will use using the following graph as an example to implement Deep Walk on,
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog7.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog7.png)
 As you can see, there are two connected components so that we can expect than when we create the vectors for each node, the vectors of [1, 2, 3, 7] should be close and similarly that of [4, 5, 6] should be close. Also, if any two vectors are from different groups, then their vectors should also be far away.
 
 Here we will represent the graph using the adjacency list representation. Make sure that you can understand that the given graph and this adjacency list are equivalent.
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog8.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog8.png)
 
 # Random Walk
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog9.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog9.png)
 # Skipgram
 The skipgram model is closely related to the CBOW model that we just covered. In the CBOW model, we have to maximize the probability of the word given its surrounding word using a neural network. And when the probability is maximized, the weights learned from the input to the hidden layer are the word vectors of the given words. In the skipgram word, we will be using a single word to maximize the probability of the surrounding words. This can be done by using a neural network that looks like the mirror image of the network that we used for the CBOW. And in the end, the weights of the input to the hidden layer will be the corresponding word vectors.
 Now let’s analyze the complexity. There are |V| words in the vocabulary, so for each iteration, we will be modifying a total of |V| vectors. This is very complex; usually, the vocabulary size is in millions, and since we usually need millions of iteration before convergence, this can take a long, long time to run.
 
 We will soon be discussing some methods like Hierarchical Softmax or negative sampling to reduce this complexity. But, first, we’ll code for a simple skipgram model. The class defines the model, whereas the function ‘skip_gram’ takes care of the training loop.
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog10.png)
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog11.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog10.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog11.png)
 i’th row of the model.phi corresponds to the vector of the i’th node. As you can see, the vectors of [0, 1, 2, 3, 7] are very close, whereas their vectors are much different from the vectors corresponding to [4, 5, 6].
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog12.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog12.png)
 Parameter containing:
 tensor([[ 1.2371,  0.3519],
         [ 1.0416, -0.1595],
@@ -118,7 +118,7 @@ Hierarchical softmax uses a binary tree to represent all the words(nodes) in the
 The idea behind decomposing the output layer into a binary tree is to reduce the time complexity to obtain probability distribution from O(V) to O(log(V))
 
 Let us understand the process with an example.
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog13.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog13.png)
 In this example, leaf nodes represent the original nodes of our graph. The highlighted nodes and edges make a path from root to an example leaf node $w_2$.
 
 Here, length of the path $L(w_{2}) = 4$.
@@ -134,11 +134,11 @@ $P(w2|wi) = p(n(w_{2}, 1), left) . p(n(w_{2}, 2),left) . p(n(w_{2}, 3), right)$
 The above process implies that the cost for computing the loss function and its gradient will be proportional to the number of nodes $(V)$ in the intermediate path between the root node and the output node, which on average, is no higher than $log(V)$. That&rsquo;s nice! Isn&rsquo;t it? In the case where we deal with a large number of outcomes, there will be a massive difference in the computational cost of &lsquo;vanilla&rsquo; softmax and hierarchical softmax.
 
 Implementation remains similar to the vanilla, except that we will only need to change the Model class by HierarchicalModel class, which is defined below.
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog14.png)
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog15.png)
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog16.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog14.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog15.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog16.png)
 The input to hidden weight vector no longer represents the vector corresponding to each vector, so directly trying to read it will not provide any valuable insight, a better option is to predict the probability of different vectors against each other to figure out the likelihood of coexistence of the nodes.
-![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk_blog17.png)
+![Deepwalk]({{ site.baseurl }}/assets/images/blogs/deepwalk/deepwalk_blog17.png)
 24.0 28.0 23.0 22.0 14.0 8.0 5.0 70.0 
 24.0 31.0 23.0 21.0 8.0 3.0 1.0 86.0 
 22.0 25.0 25.0 26.0 15.0 11.0 2.0 69.0 
