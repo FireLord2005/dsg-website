@@ -22,7 +22,7 @@ Main aim is to segregate the various data points into different groups called cl
 
 Clustering algorithm does not predict an outcome or target variable but can be used to improve predictive model. Predictive models can be built for clusters to improve the accuracy of our prediction.
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog.png)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog.png)
 
 ## Types of Clustering
 There exist more than 100 clustering algorithms as of today. Some of the commonly used are k-Means, Hierarchical, DBSCAN and OPTICS. Two of these have been covered here:
@@ -32,7 +32,7 @@ It is a type of connectivity model clustering which is based on the fact that da
 
 As the name speaks for itself, the hierarchical clustering forms the hierarchy of the clusters that can be studied by visualising [dendogram](https://en.wikipedia.org/wiki/Dendrogram).
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog2.png)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog2.png)
 
 How to measure closeness of points?
 
@@ -64,7 +64,7 @@ Focus on Centroid Distance right now!
 
 4. This process is repeated until we are left with a single cluster, hence forming hierarchy of clusters.
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog3.png)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog3.png)
 
 How many clusters to form?
 
@@ -72,14 +72,14 @@ How many clusters to form?
 
 2. Intuition and prior knowledge of the data set.
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog4.png)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog4.png)
 
 # Good Cluster Analysis
 Data-points within same cluster share similar profile: Statistically, check the standard deviation for each input variable in each cluster. A perfect separation in case of cluster analysis is rarely achieved. Hence, even one standard deviation distance between two cluster means is considered to be a good separation.
 
 Well spread proportion of data-points among clusters: There are no standards for this requirement. But a minimum of 5% and maximum of 35% of the total population can be assumed as a safe range for each cluster.
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog5.jpg)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog5.jpg)
 
 # K-Means Clustering
 One of the simplest and most widely used unsupervised learning algorithm. It involves a simple way to classify the data set into fixed no. of K clusters . The idea is to define K centroids, one for each cluster.
@@ -90,28 +90,28 @@ K-Means is iterative in nature and easy to implement.
 # Algorithm Explained
 Let there be N data points. At first, **_K _**centroids are initialised in our data set representing *K *different clusters.
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog6.png)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog6.png)
 
 Now, each of the N data points are assigned to closest centroid in the data set and merged with that centroid as a single cluster. In this way, every data point is assigned to one of the centroids.
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog7.png)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog7.png)
 
 Then, K cluster centroids are recalculated and again, each of the N data points are assigned to the nearest centroid.
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog8.png)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog8.png)
 
 Step 3 is repeated until no further improvement can be made.
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog9.png)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog9.png)
 
 # In this process, a loop is generated. As a result of this loop, K centroids change their location step by step until no more change is possible.
 This algorithm aims at minimising the objective function:
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog10.jpg)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog10.jpg)
 
 It represent the sum of** euclidean distance** of all the data points from the cluster centroid which is minimised.
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog11.png)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog11.png)
 
 How to initialize K centroids?
 
@@ -133,13 +133,13 @@ In K-Means Clustering, value of **_K _**has to be specified beforehand. It can b
 
 Elbow Method: Clustering is done on a dataset for varying values of and SSE (Sum of squared errors) is calculated for each value of K. Then, a graph between K and SSE is plotted. Plot formed assumes the shape of an arm. There is a point on the graph where SSE does not decreases significantly with increasing K. This is represented by elbow of the arm and is chosen as the value of K. (OPTIMUM)
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog12.png)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog12.png)
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog13.jpg)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog13.jpg)
 
 [Silhouette Score](https://en.wikipedia.org/wiki/Silhouette_(clustering)): Used to study the separation distance between the resulting clusters. The silhouette plot displays a measure of how close each point in one cluster is to points in the neighbouring clusters. [Click here](http://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html) for complete explanation of the method.
 
-![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering_blog14.png)
+![Clustering]({{ site.baseurl }}/assets/images/blogs/clustering/clustering_blog14.png)
 
 K-Means v/s Hierarchical
 1. For big data, K-Means is better! Time complexity of K-Means is linear, while that of hierarchical clustering is quadratic.
