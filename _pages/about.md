@@ -98,7 +98,7 @@ We are Data Science Group, IIT Roorkee. A student organizaton, part of the umbre
 
   <div class="member-card">
     <img src="{{ site.baseurl }}/assets/images/members/y24/advika.JPG" width="200" height="200" alt="Advika Sinha">
-    <h3><a href="{{ site.baseurl }}/members/advika">Advika Sinha</a></h3>
+    <h3><a href="{{ site.baseurl }}/members/advikasinha">Advika Sinha</a></h3>
   </div>
 
  <div class="member-card">
