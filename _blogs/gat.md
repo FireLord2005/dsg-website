@@ -3,7 +3,7 @@ title: "Understanding Graph Attention Networks (GAT)"
 layout: single
 permalink: /blogs/gat/
 ---
-![GAT]({{ site.baseurl }}/assets/images/blogs/gat_blog.jpg)
+![GAT]({{ site.baseurl }}/assets/images/blogs/gat/gat_blog.jpg)
 ## Understanding Graph Attention Networks (GAT)
 This is 4th in the series of blogs <font color="green"><b>Explained: Graph Representation Learning</b></font>. Let&rsquo;s dive right in, assuming you have read the first three. GAT (Graph Attention Network), is a novel neural network architecture that operate on graph-structured data, leveraging masked self-attentional layers to address the shortcomings of prior methods based on graph convolutions or their approximations. By stacking layers in which nodes are able to attend over their neighborhoods’ features, the method enables (implicitly) specifying different weights to different nodes in a neighborhood, without requiring any kind of costly matrix operation (such as inversion) or depending on knowing the graph structure upfront. In this way, GAT addresses several key challenges of spectral-based graph neural networks simultaneously, and make the model readily applicable to inductive as well as transductive problems.
 
@@ -19,7 +19,7 @@ $$h_i^{(l+1)}=\sigma\left(\sum_{j\in \mathcal{N}(i)} {\frac{1}{c_{ij}} W^{(l)}h^
 where $\mathcal{N}(i)$ is the set of its one-hop neighbors (to include $v_{i}$ in the set, we simply added a self-loop to each node), $c_{ij}=\sqrt{|\mathcal{N}(i)|}\sqrt{|\mathcal{N}(j)|}$ is a normalization constant based on graph structure, $\sigma$ is an activation function (GCN uses ReLU), and $W^{l}$ is a shared weight matrix for node-wise feature transformation.
 
 GAT introduces the attention mechanism as a substitute for the statically normalized convolution operation. The figure below clearly illustrates the key difference.
-![GAT]({{ site.baseurl }}/assets/images/blogs/gat_blog2.png)
+![GAT]({{ site.baseurl }}/assets/images/blogs/gat/gat_blog2.png)
 ## How does the GAT layer work?
 The particular attentional setup utilized by GAT closely follows the work of Bahdanau et al. (2015) i.e Additive Attention, but the framework is agnostic to the particular choice of attention mechanism.
 
@@ -29,7 +29,7 @@ The input to the layer is a set of node features, $\mathbf{h} = {\vec{h}_1,\vec{
 1. Simple linear transformation: In order to obtain sufficient expressive power to transform the input features into higher level features, atleast one learnable linear transformation is required. To that end, as an initial step, a shared linear transformation, parametrized by a weight matrix, $W ∈ \mathbb{R}^{F′×F}$ , is applied to every node.
 $$\begin{split}\begin{align}i^{(l)}&amp;=W^{(l)}h_i^{(l)} \\end{align}\end{split}$$
 
-![GAT]({{ site.baseurl }}/assets/images/blogs/gat_blog3.jpg)
+![GAT]({{ site.baseurl }}/assets/images/blogs/gat/gat_blog3.jpg)
 2. Attention Coefficients: We then compute a pair-wise un-normalized attention score between two neighbors. Here, it first concatenates the $z$ embeddings of the two nodes, where $||$ denotes concatenation, then takes a dot product of it with a learnable weight vector $\vec a^{(l)}$, and applies a LeakyReLU in the end. This form of attention is usually called additive attention, in contrast with the dot-product attention used for the Transformer model. We then perform self-attention on the nodes, a shared attentional mechanism $a$ : $\mathbb{R}^{F′} × \mathbb{R}^{F′} → \mathbb{R}$ to compute attention coefficients 
 $$\begin{split}\begin{align}e_{ij}^{(l)}&=\text{LeakyReLU}(\vec a^{(l)^T}(z_i^{(l)}||z_j^{(l)}))\\\end{align}\end{split}$$
 
@@ -46,7 +46,7 @@ h_i^{(l+1)}&amp;=\sigma\left(\sum_{j\in \mathcal{N}(i)} {\alpha^{(l)}_{ij} z^{(l
 \end{align}\end{split}$$
 
 # Multi-head Attention
-![GAT]({{ site.baseurl }}/assets/images/blogs/gat_blog4.jpeg)
+![GAT]({{ site.baseurl }}/assets/images/blogs/gat/gat_blog4.jpeg)
 An illustration of multi-head attention (with K = 3 heads) by node 1 on its neighborhood. Different arrow styles and colors denote independent attention computations. The aggregated features from each head are concatenated or averaged to obtain $\vec{h'}_{1}$.
 
 Analogous to multiple channels in a Convolutional Net, GAT uses multi-head attention to enrich the model capacity and to stabilize the learning process. Specifically, K independent attention mechanisms execute the transformation of Equation 4, and then their outputs can be combined in 2 ways depending on the use:
@@ -61,19 +61,19 @@ Thus concatenation for intermediary layers and average for the final layer are u
 
 ## Implementing GAT Layer in PyTorch
 # Imports
-![GAT]({{ site.baseurl }}/assets/images/blogs/gat_blog5.png)
+![GAT]({{ site.baseurl }}/assets/images/blogs/gat/gat_blog5.png)
 # GAT Layer
-![GAT]({{ site.baseurl }}/assets/images/blogs/gat_blog6.png)
-![GAT]({{ site.baseurl }}/assets/images/blogs/gat_blog7.png)
+![GAT]({{ site.baseurl }}/assets/images/blogs/gat/gat_blog6.png)
+![GAT]({{ site.baseurl }}/assets/images/blogs/gat/gat_blog7.png)
 ## Implementing GAT on Citation Datasets using PyTorch Geometric
 # PyG Imports
-![GAT]({{ site.baseurl }}/assets/images/blogs/gat_blog8.png)
+![GAT]({{ site.baseurl }}/assets/images/blogs/gat/gat_blog8.png)
 # Model
-![GAT]({{ site.baseurl }}/assets/images/blogs/gat_blog9.png)
+![GAT]({{ site.baseurl }}/assets/images/blogs/gat/gat_blog9.png)
 # Train
-![GAT]({{ site.baseurl }}/assets/images/blogs/gat_blog10.png)
+![GAT]({{ site.baseurl }}/assets/images/blogs/gat/gat_blog10.png)
 # Evaluate
-![GAT]({{ site.baseurl }}/assets/images/blogs/gat_blog11.png)
+![GAT]({{ site.baseurl }}/assets/images/blogs/gat/gat_blog11.png)
 
 You can find our implementation made using PyTorch Geometric at [GAT_PyG](https://github.com/dsgiitr/graph_nets/blob/master/GAT/GAT_PyG.py) with GAT trained on a Citation Network, the Cora Dataset.
 
