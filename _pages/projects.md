@@ -60,7 +60,7 @@ permalink: /projects/
     <p>Using RL for training bots to play the online battle game Pokémon Showdown</p>
     <div class="project-links">
       <a href="https://github.com/dsgiitr/PikaBot-RL" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/visual_ml/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/visual_ml/">Details</a>
     </div>
   </div>
 
@@ -70,8 +70,8 @@ permalink: /projects/
     <h3>Diffusion Everything</h3>
     <p>Demos involving diffusion models : 1. Training and inference of diffusion on a custom 2D dataset. 2. Training and inference of VAE and latent diffusion models   3. Inference of large diffusion models with different reverse samplers</p>
     <div class="project-links">
-      <a href="https://github.con/dsgiitr/diffusion-everything" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/diffusion-everything/">Details</a>
+      <a href="https://github.com/dsgiitr/diffusion-everything" target="_blank">GitHub</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/diffusion-everything/">Details</a>
     </div>
   </div>
 
@@ -82,7 +82,7 @@ permalink: /projects/
     <div class="project-links">
       <a href="https://github.com/dsgiitr/segmedit" target="_blank">GitHub</a>
       <!-- <a href="https://huggingface.co/spaces/aakashks/adv-photo-editing">HF Demo</a> -->
-      <a href="https://advikasinha.github.io/dsg-website/projects/segment-then-edit/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/segment-then-edit/">Details</a>
     </div>
   </div>
 
@@ -116,7 +116,7 @@ permalink: /projects/
     <p>FeedCode is an intelligent feedback tool that provides personalized code reviews based on your coding style and activity</p>
     <div class="project-links">
       <a href="https://github.com/AbhishekPanwarr/feedCode" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/visual_ml/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/visual_ml/">Details</a>
     </div>
   </div>
   
@@ -126,7 +126,7 @@ permalink: /projects/
     <p>Interactive Visual Machine Learning Demos. Machine Learning in the browser powered by TF JS.</p>
     <div class="project-links">
       <a href="https://github.com/dsgiitr/VisualML" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/visual_ml/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/visual_ml/">Details</a>
     </div>
   </div>
 
@@ -136,7 +136,7 @@ permalink: /projects/
     <p>This project reproduces the book Dive Into Deep Learning (www.d2l.ai), adapting the code from MXNet into PyTorch.</p>
     <div class="project-links">
       <a href="https://github.com/dsgiitr/d2l-pytorch" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/d2l-pytorch/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/d2l-pytorch/">Details</a>
     </div>
   </div>
 
@@ -146,7 +146,7 @@ permalink: /projects/
     <p>Implementation and Explanation Graph Representation Learning papers involving DeepWalk, GCN, GraphSAGE, ChebNet and GAT.</p>
     <div class="project-links">
       <a href="https://github.com/dsgiitr/graph_nets" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/graph_nets/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/graph_nets/">Details</a>
     </div>
   </div>
 
@@ -156,7 +156,7 @@ permalink: /projects/
     <p>This project builds on a demo for playing the game 2048 using Reinforcement Learning.</p>
     <div class="project-links">
       <a href="https://github.com/dsgiitr/rl_2048" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/rl2048/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/rl2048/">Details</a>
     </div>
   </div>
 
@@ -166,7 +166,7 @@ permalink: /projects/
     <p>Implementation of BERT based Sarcasm Detection Classification model using Tensorflow.</p>
     <div class="project-links">
       <a href="https://github.com/dsgiitr/Sarcasm-Detection-Tensorflow" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/sarcasm_detection/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/sarcasm_detection/">Details</a>
     </div>
   </div>
 
@@ -176,7 +176,7 @@ permalink: /projects/
     <p>This project builds on a demo for several Adversarial Attacks on ImageNet Classifier Models.</p>
     <div class="project-links">
       <a href="https://github.com/dsgiitr/adversarial_lab" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/adversarial_lab/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/adversarial_lab/">Details</a>
     </div>
   </div>
 
@@ -186,7 +186,7 @@ permalink: /projects/
     <p>This is a step towards automating the vehicles entering IIT Roorkee campus using state of the art Deep learning & Computer Vision.</p>
     <div class="project-links">
       <a href="https://github.com/dsgiitr/np_detection" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/np_detection/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/np_detection/">Details</a>
     </div>
   </div>
 
@@ -196,7 +196,7 @@ permalink: /projects/
     <p>Winning Solution in the Inter IIT Tech Meet 2018 Machine Learning Challenge, "Eye In The Sky".</p>
     <div class="project-links">
       <a href="https://github.com/dsgiitr/Eye-In-The-Sky-Image_Segmentation_Challenge" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/eye_in_the_sky/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/eye_in_the_sky/">Details</a>
     </div>
   </div>
 
@@ -206,7 +206,7 @@ permalink: /projects/
     <p>Visualising different loss and optimisation functions using Autoencoders.</p>
     <div class="project-links">
       <a href="https://github.com/dsgiitr/Visualizing-Loss-Functions" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/visualizing_loss/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/visualizing_loss/">Details</a>
     </div>
   </div>
 
@@ -216,7 +216,7 @@ permalink: /projects/
     <p>Implementation of Neural Style Transfer described in the paper by Gatys et.al.</p>
     <div class="project-links">
       <a href="https://github.com/dsgiitr/Neural-Style-Transfer" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/neural_style/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/neural_style/">Details</a>
     </div>
   </div>
 
@@ -226,7 +226,7 @@ permalink: /projects/
     <p>Using GTSRB dataset to build a CNN based Traffic Sign Classifier.</p>
     <div class="project-links">
       <a href="https://github.com/dsgiitr/Traffic-Sign-Classification" target="_blank">GitHub</a>
-      <a href="https://advikasinha.github.io/dsg-website/projects/traffic_sign_classification/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/traffic_sign_classification/">Details</a>
     </div>
   </div>
 
