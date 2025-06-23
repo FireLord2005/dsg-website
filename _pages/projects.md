@@ -92,7 +92,7 @@ permalink: /projects/
     <p> A two-stage personalization pipeline for personalized image generation using LoRA-based attention fine-tuning and segmentation-guided Img2Img synthesis.</p>
     <div class="project-links">
       <a href="https://github.com/kaustubh202/image-alchemy" target="_blank">GitHub</a>
-      <a href="https://github.com/dsgiitr/dsg-website/projects/image-alchemy/">Details</a>
+      <a href="https://github.com/dsgiitr/dsg-website/projects/image_alchemy/">Details</a>
     </div>
   </div>
 
