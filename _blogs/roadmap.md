@@ -1,5 +1,5 @@
 ---
-title:"Roadmap To Data Science"
+title: "Roadmap To Data Science"
 layout: single
 permalink: "/blogs/roadmap/"
 ---
