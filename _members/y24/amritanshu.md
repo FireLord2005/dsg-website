@@ -6,7 +6,7 @@ layout: single
 
 
 
-# Cherish Puniani
+# Amritanshu Tiwari
 
 <img src="{{ site.baseurl }}/assets/images/members/y24/amritanshu.png" width="200" height="200" alt="Amritanshu Tiwari">
 
